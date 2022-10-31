@@ -18,6 +18,11 @@ namespace ElectricityDataApp.DataParser
         {
             _client = client;
             _options = options.Value;
+
+            if (_options.HttpRequestTimeoutInMinutes.HasValue)
+            {
+                _client.Timeout = TimeSpan.FromMinutes(_options.HttpRequestTimeoutInMinutes.Value);
+            }
         }
 
 
@@ -84,7 +89,7 @@ namespace ElectricityDataApp.DataParser
                     throw new PossibleStructureChangeException(nameof(downloadNode));
                 }
 
-                string downloadUrl = $"{_options}{downloadNode.GetAttributeValue("href", "")}";
+                string downloadUrl = $"{_options.BaseUrl}{downloadNode.GetAttributeValue("href", "")}";
 
                 var date = dateValue.ToNormalizedDate();
 

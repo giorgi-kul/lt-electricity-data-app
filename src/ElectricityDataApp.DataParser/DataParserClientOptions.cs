@@ -12,5 +12,6 @@ namespace ElectricityDataApp.DataParser
         public string DataUrl { get; set; }
         public int DateColumnIndex { get; set; }
         public int DownloadNodeTableIndex { get; set; }
+        public int? HttpRequestTimeoutInMinutes { get; set; }
     }
 }
