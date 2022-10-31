@@ -14,15 +14,15 @@ namespace ElectricityDataApp.DataParser.Models
         public string ObjGvTipas { get; set; }
 
         [Name("OBJ_NUMERIS")]
-        public string ObjNumeris { get; set; }
+        public int ObjNumeris { get; set; }
 
         [Name("P+")]
-        public string PPlus { get; set; }
+        public decimal PPlus { get; set; }
 
         [Name("PL_T")]
         public string PlT { get; set; }
 
         [Name("P-")]
-        public string PMinus { get; set; }
+        public decimal PMinus { get; set; }
     }
 }
