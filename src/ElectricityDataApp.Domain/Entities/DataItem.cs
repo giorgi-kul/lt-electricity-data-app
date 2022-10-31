@@ -8,16 +8,18 @@ namespace ElectricityDataApp.Domain.Entities
 {
     public class DataItem : BaseEntity
     {
+        public int RegionId { get; set; }
+
         public Region Region { get; set; }
 
         public string ObjGvTipas { get; set; }
 
         public int ObjNumeris { get; set; }
 
-        public decimal PPlus { get; set; }
+        public decimal? PPlus { get; set; }
 
         public DateTime Date { get; set; }
 
-        public decimal PMinus { get; set; }
+        public decimal? PMinus { get; set; }
     }
 }

@@ -13,5 +13,6 @@ namespace ElectricityDataApp.DataParser
         public int DateColumnIndex { get; set; }
         public int DownloadNodeTableIndex { get; set; }
         public int? HttpRequestTimeoutInMinutes { get; set; }
+        public int LastMonthCountToProcess { get; set; }
     }
 }

@@ -41,7 +41,7 @@ namespace ElectricityDataApp.DataParser
             return csv.GetRecords<Record>().ToList();
         }
 
-        public async Task<IEnumerable<TableData>> GetDataUrlsToProcess(int monthsToProcess)
+        public async Task<IEnumerable<TableData>> GetDataUrlsToProcess(DateTime? lastProcessedDate)
         {
             List<TableData> data = new();
 
@@ -100,8 +100,13 @@ namespace ElectricityDataApp.DataParser
                 });
             }
 
+            if (lastProcessedDate.HasValue)
+            {
+                data = data.FindAll(d => d.Date > lastProcessedDate.Value);
+            }
+
             return data.OrderByDescending(d => d.Date)
-                       .Take(monthsToProcess);
+                       .Take(_options.LastMonthCountToProcess);
         }
     }
 }

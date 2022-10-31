@@ -23,6 +23,7 @@ using IHost host = Host.CreateDefaultBuilder(args)
             opt.DateColumnIndex = _options.DateColumnIndex;
             opt.DownloadNodeTableIndex = _options.DownloadNodeTableIndex;
             opt.HttpRequestTimeoutInMinutes = _options.HttpRequestTimeoutInMinutes;
+            opt.LastMonthCountToProcess = _options.LastMonthCountToProcess;
         });
     })
     .Build();
@@ -31,7 +32,7 @@ HttpClient httpClient = host.Services.GetRequiredService<HttpClient>();
 
 IDataParserClient dataParserClient = host.Services.GetRequiredService<IDataParserClient>();
 
-var tableData = await dataParserClient.GetDataUrlsToProcess(2);
+var tableData = await dataParserClient.GetDataUrlsToProcess(null);
 
 var finalData = await Task.WhenAll(tableData.Select(td => dataParserClient.ParseCsvData(td.DataUrl)));
 

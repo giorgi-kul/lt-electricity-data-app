@@ -4,6 +4,7 @@ using ElectricityDataApp.Infrastructure.Persistence;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ElectricityDataApp.Infrastructure.Migrations
 {
     [DbContext(typeof(DataContext))]
-    partial class DataContextModelSnapshot : ModelSnapshot
+    [Migration("20221031184438_DataItemDecimalNullable")]
+    partial class DataItemDecimalNullable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -43,10 +45,10 @@ namespace ElectricityDataApp.Infrastructure.Migrations
                     b.Property<int>("ObjNumeris")
                         .HasColumnType("int");
 
-                    b.Property<decimal>("PMinus")
+                    b.Property<decimal?>("PMinus")
                         .HasColumnType("decimal(18,2)");
 
-                    b.Property<decimal>("PPlus")
+                    b.Property<decimal?>("PPlus")
                         .HasColumnType("decimal(18,2)");
 
                     b.Property<int>("RegionId")

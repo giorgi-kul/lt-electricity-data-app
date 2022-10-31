@@ -8,5 +8,7 @@ namespace ElectricityDataApp.Application.Interfaces
         DbSet<Region> Regions { get; set; }
 
         DbSet<DataItem> DataItems { get; set; }
+
+        Task<int> SaveChangesAsync(CancellationToken cancellationToken);
     }
 }

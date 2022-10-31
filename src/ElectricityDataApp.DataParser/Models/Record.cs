@@ -17,12 +17,12 @@ namespace ElectricityDataApp.DataParser.Models
         public int ObjNumeris { get; set; }
 
         [Name("P+")]
-        public decimal PPlus { get; set; }
+        public decimal? PPlus { get; set; }
 
         [Name("PL_T")]
-        public string PlT { get; set; }
+        public DateTime PlT { get; set; }
 
         [Name("P-")]
-        public decimal PMinus { get; set; }
+        public decimal? PMinus { get; set; }
     }
 }

@@ -10,10 +10,7 @@ namespace ElectricityDataApp.Infrastructure
     {
         public static IServiceCollection AddInfrastructure(this IServiceCollection services, IConfiguration configuration)
         {
-            var connectionString = configuration.GetConnectionString("DbConnection");
-
-            services.AddDbContext<DataContext>(options =>
-                options.UseSqlServer(connectionString));
+            services.AddDbContext<DataContext>(options => options.UseSqlServer(configuration.GetConnectionString("DbConnection")));
 
             services.AddScoped<IDataContext>(provider => provider.GetRequiredService<DataContext>());
 
