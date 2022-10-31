@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ElectricityDataApp.Domain.Entities
 {
-    public class DataItem
+    public class DataItem : BaseEntity
     {
         public Region Region { get; set; }
 

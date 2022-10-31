@@ -1,12 +1,8 @@
-﻿using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Configuration;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using ElectricityDataApp.Application.Interfaces;
 using ElectricityDataApp.Infrastructure.Persistence;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace ElectricityDataApp.Infrastructure
 {
@@ -14,13 +10,12 @@ namespace ElectricityDataApp.Infrastructure
     {
         public static IServiceCollection AddInfrastructure(this IServiceCollection services, IConfiguration configuration)
         {
+            var connectionString = configuration.GetConnectionString("DbConnection");
 
             services.AddDbContext<DataContext>(options =>
-                options.UseSqlServer(configuration.GetConnectionString("DbConnection"),
-                    builder => builder.MigrationsAssembly(typeof(DataContext).Assembly.FullName)));
+                options.UseSqlServer(connectionString));
 
-
-            services.AddScoped<DataContext>(provider => provider.GetRequiredService<DataContext>());
+            services.AddScoped<IDataContext>(provider => provider.GetRequiredService<DataContext>());
 
             return services;
         }
