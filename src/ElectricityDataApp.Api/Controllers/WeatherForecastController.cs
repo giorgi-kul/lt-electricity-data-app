@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using Serilog;
 
 namespace ElectricityDataApp.Api.Controllers
 {
@@ -21,6 +22,9 @@ namespace ElectricityDataApp.Api.Controllers
         [HttpGet(Name = "GetWeatherForecast")]
         public IEnumerable<WeatherForecast> Get()
         {
+            _logger.Log(LogLevel.Critical, "123123123");
+            Log.Fatal("fataaaaaaaaal");
+
             return Enumerable.Range(1, 5).Select(index => new WeatherForecast
             {
                 Date = DateTime.Now.AddDays(index),

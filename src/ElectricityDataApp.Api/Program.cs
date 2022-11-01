@@ -4,15 +4,14 @@ using ElectricityDataApp.Application;
 using ElectricityDataApp.Infrastructure;
 using Hangfire;
 using Hangfire.SqlServer;
+using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-builder.Services.AddApi(builder.Configuration);
+builder.Services.AddApi(builder.Configuration, builder.Host);
 builder.Services.AddApplication();
 builder.Services.AddInfrastructure(builder.Configuration);
-
-
 
 var app = builder.Build();
 

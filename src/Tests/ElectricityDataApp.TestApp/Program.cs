@@ -3,7 +3,6 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 
-
 DataParserClientOptions _options = new();
 using IHost host = Host.CreateDefaultBuilder(args)
     .ConfigureAppConfiguration((hostingContext, configuration) =>
@@ -27,6 +26,8 @@ using IHost host = Host.CreateDefaultBuilder(args)
         });
     })
     .Build();
+
+
 
 HttpClient httpClient = host.Services.GetRequiredService<HttpClient>();
 

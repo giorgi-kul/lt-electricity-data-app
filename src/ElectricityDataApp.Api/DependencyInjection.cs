@@ -1,13 +1,16 @@
 ﻿using ElectricityDataApp.Api.Services;
 using Hangfire;
+using Hangfire.Logging;
 using Hangfire.SqlServer;
 using Microsoft.Extensions.Configuration;
+using Serilog;
+using Serilog.Sinks.MSSqlServer;
 
 namespace ElectricityDataApp.Api
 {
     public static class DependencyInjection
     {
-        public static IServiceCollection AddApi(this IServiceCollection services, IConfiguration config)
+        public static IServiceCollection AddApi(this IServiceCollection services, IConfiguration config, ConfigureHostBuilder host)
         {
             string connectionString = config.GetConnectionString("DbConnection");
 
@@ -36,6 +39,14 @@ namespace ElectricityDataApp.Api
             services.AddDataParser(opt => config.GetSection("DataParser").Bind(opt));
 
             ConfigureRecurringJobs();
+
+            Log.Logger = new LoggerConfiguration()
+              .ReadFrom.Configuration(config)
+              .CreateLogger();
+
+            Serilog.Debugging.SelfLog.Enable(msg => Console.WriteLine(msg));
+
+            host.UseSerilog();
 
             return services;
         }
