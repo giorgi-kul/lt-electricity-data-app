@@ -1,6 +1,7 @@
 using ElectricityDataApp.Application.Features.ElectricityData.Queries;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
+using System.Net;
 
 namespace ElectricityDataApp.Api.Controllers
 {
@@ -16,6 +17,7 @@ namespace ElectricityDataApp.Api.Controllers
         }
 
         [HttpGet(Name = "GetElectricityData")]
+        [ProducesResponseType(typeof(IEnumerable<ElectricityDataVm>), (int)HttpStatusCode.OK)]
         public async Task<IActionResult> Get([FromQuery] GetElectricityDataQuery request)
         {
             try
