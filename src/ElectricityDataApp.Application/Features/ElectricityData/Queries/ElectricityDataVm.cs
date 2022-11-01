@@ -1,17 +1,15 @@
-﻿using System;
+﻿using ElectricityDataApp.Domain.Entities;
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ElectricityDataApp.Domain.Entities
+namespace ElectricityDataApp.Application.Features.ElectricityData.Queries
 {
-    public class DataItem : BaseEntity
+    public class ElectricityDataVm
     {
-        public int RegionId { get; set; }
-
-        public Region Region { get; set; }
+        public string Region { get; set; }
 
         public string ObjGvTipas { get; set; }
 

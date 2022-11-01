@@ -17,6 +17,7 @@ namespace ElectricityDataApp.Api
             services.AddScoped<IJobService, JobService>();
 
             services.AddControllers();
+
             services.AddEndpointsApiExplorer();
             services.AddSwaggerGen();
 

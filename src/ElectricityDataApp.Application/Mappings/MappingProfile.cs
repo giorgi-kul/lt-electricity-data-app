@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using ElectricityDataApp.Application.Features.ElectricityData.Queries;
 using ElectricityDataApp.DataParser.Models;
 using ElectricityDataApp.Domain.Entities;
 using System;
@@ -13,7 +14,7 @@ namespace ElectricityDataApp.Application.Mappings
     {
         public MappingProfile()
         {
-            CreateMap<Record, DataItem>();
+            CreateMap<DataItem, ElectricityDataVm>().ForMember(dest => dest.Region, opt => opt.MapFrom(dest => dest.Region.Name));
         }
     }
 }

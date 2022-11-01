@@ -19,8 +19,4 @@
     <ProjectReference Include="..\ElectricityDataApp.Domain\ElectricityDataApp.Domain.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Features\ElectricityData\Queries\" />
-  </ItemGroup>
-
 </Project>
