@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ElectricityDataApp.Domain.Entities
 {
-    public abstract class BaseEntity
+    public class BaseEntity
     {
         private DateTime? _createDate;
 
@@ -16,7 +16,7 @@ namespace ElectricityDataApp.Domain.Entities
         {
             get
             {
-                return _createDate ?? (_createDate = DateTime.Now).Value;
+                return _createDate.HasValue ? _createDate.Value : (_createDate = DateTime.Now).Value;
             }
             set
             {

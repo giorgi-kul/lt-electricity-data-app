@@ -14,7 +14,7 @@ namespace ElectricityDataApp.DataParser.Models
         public string ObjGvTipas { get; set; }
 
         [Name("OBJ_NUMERIS")]
-        public int ObjNumeris { get; set; }
+        public long ObjNumeris { get; set; }
 
         [Name("P+")]
         public decimal? PPlus { get; set; }
