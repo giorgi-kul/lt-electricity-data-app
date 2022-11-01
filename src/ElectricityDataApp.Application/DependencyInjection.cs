@@ -1,4 +1,6 @@
-﻿using ElectricityDataApp.DataParser;
+﻿using ElectricityDataApp.Application.Behaviours;
+using ElectricityDataApp.Application.Behaviuors;
+using ElectricityDataApp.DataParser;
 using FluentValidation;
 using MediatR;
 using Microsoft.Extensions.DependencyInjection;
@@ -14,7 +16,12 @@ namespace ElectricityDataApp.Application
             services.AddValidatorsFromAssembly(Assembly.GetExecutingAssembly());
             services.AddMediatR(Assembly.GetExecutingAssembly());
 
+            services.AddTransient(typeof(IPipelineBehavior<,>), typeof(UnhandledExceptionBehaviour<,>));
+            services.AddTransient(typeof(IPipelineBehavior<,>), typeof(ValidationBehaviour<,>));
+            services.AddTransient(typeof(IPipelineBehavior<,>), typeof(PerformanceBehaviour<,>));
+
             services.AddScoped<IDataParserClient, DataParserClient>();
+
             services.AddHttpClient();
 
             return services;
