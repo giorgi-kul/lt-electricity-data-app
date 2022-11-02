@@ -1,6 +1,6 @@
 ﻿using ElectricityDataApp.DataParser.Models;
 
-namespace ElectricityDataApp.DataParser
+namespace ElectricityDataApp.DataParser.Interfaces
 {
     public interface IDataParserClient
     {

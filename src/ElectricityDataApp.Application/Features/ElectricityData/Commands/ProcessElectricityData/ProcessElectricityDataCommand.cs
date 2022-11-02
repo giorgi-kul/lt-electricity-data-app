@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
 using ElectricityDataApp.Application.Features.Regions.Commands.CreateIfNotExists;
 using ElectricityDataApp.Application.Interfaces;
-using ElectricityDataApp.DataParser;
+using ElectricityDataApp.DataParser.Interfaces;
 using ElectricityDataApp.DataParser.Models;
 using ElectricityDataApp.Domain.Entities;
 using MediatR;

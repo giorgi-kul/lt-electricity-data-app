@@ -3,19 +3,21 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.3.32804.467
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ElectricityDataApp.Api", "src\ElectricityDataApp.Api\ElectricityDataApp.Api.csproj", "{30B4C26D-B2FE-43AA-80FE-8775477CBDF9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ElectricityDataApp.Api", "src\ElectricityDataApp.Api\ElectricityDataApp.Api.csproj", "{30B4C26D-B2FE-43AA-80FE-8775477CBDF9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ElectricityDataApp.DataParser", "src\ElectricityDataApp.DataParser\ElectricityDataApp.DataParser.csproj", "{9F469A81-9319-4574-A6C4-CEC070F7611C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ElectricityDataApp.DataParser", "src\ElectricityDataApp.DataParser\ElectricityDataApp.DataParser.csproj", "{9F469A81-9319-4574-A6C4-CEC070F7611C}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{6FB8CB9E-D447-4DF9-A4AA-8BAE90B27547}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ElectricityDataApp.TestApp", "src\Tests\ElectricityDataApp.TestApp\ElectricityDataApp.TestApp.csproj", "{2B0F42F6-CEE0-4300-9683-F9E18AE1B045}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ElectricityDataApp.TestApp", "src\Tests\ElectricityDataApp.TestApp\ElectricityDataApp.TestApp.csproj", "{2B0F42F6-CEE0-4300-9683-F9E18AE1B045}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ElectricityDataApp.Domain", "src\ElectricityDataApp.Domain\ElectricityDataApp.Domain.csproj", "{3225D60B-A4D1-4C78-8F7E-A8F03EAF1343}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ElectricityDataApp.Domain", "src\ElectricityDataApp.Domain\ElectricityDataApp.Domain.csproj", "{3225D60B-A4D1-4C78-8F7E-A8F03EAF1343}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ElectricityDataApp.Application", "src\ElectricityDataApp.Application\ElectricityDataApp.Application.csproj", "{8E766888-88B0-49E4-BC38-8998D824BB78}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ElectricityDataApp.Application", "src\ElectricityDataApp.Application\ElectricityDataApp.Application.csproj", "{8E766888-88B0-49E4-BC38-8998D824BB78}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ElectricityDataApp.Infrastructure", "src\ElectricityDataApp.Infrastructure\ElectricityDataApp.Infrastructure.csproj", "{DEA5D859-8A7F-4470-982D-249CCC50E0ED}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ElectricityDataApp.Infrastructure", "src\ElectricityDataApp.Infrastructure\ElectricityDataApp.Infrastructure.csproj", "{DEA5D859-8A7F-4470-982D-249CCC50E0ED}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ElectricityDataApp.UnitTests", "src\Tests\ElectricityDataApp.UnitTests\ElectricityDataApp.UnitTests.csproj", "{61513EDC-DC79-4DDB-A810-19D9E7160FB7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -47,12 +49,17 @@ Global
 		{DEA5D859-8A7F-4470-982D-249CCC50E0ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DEA5D859-8A7F-4470-982D-249CCC50E0ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DEA5D859-8A7F-4470-982D-249CCC50E0ED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{61513EDC-DC79-4DDB-A810-19D9E7160FB7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{61513EDC-DC79-4DDB-A810-19D9E7160FB7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{61513EDC-DC79-4DDB-A810-19D9E7160FB7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{61513EDC-DC79-4DDB-A810-19D9E7160FB7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{2B0F42F6-CEE0-4300-9683-F9E18AE1B045} = {6FB8CB9E-D447-4DF9-A4AA-8BAE90B27547}
+		{61513EDC-DC79-4DDB-A810-19D9E7160FB7} = {6FB8CB9E-D447-4DF9-A4AA-8BAE90B27547}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {7A13F3D6-82D5-4E57-81ED-713F77B19625}

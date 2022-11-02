@@ -1,6 +1,7 @@
 ﻿using ElectricityDataApp.Application.Behaviours;
 using ElectricityDataApp.Application.Behaviuors;
 using ElectricityDataApp.DataParser;
+using ElectricityDataApp.DataParser.Interfaces;
 using FluentValidation;
 using MediatR;
 using Microsoft.Extensions.DependencyInjection;

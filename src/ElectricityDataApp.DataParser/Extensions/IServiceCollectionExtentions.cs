@@ -1,4 +1,5 @@
 ﻿using ElectricityDataApp.DataParser;
+using ElectricityDataApp.DataParser.Interfaces;
 using Microsoft.Extensions.Configuration;
 
 namespace Microsoft.Extensions.DependencyInjection
@@ -41,8 +42,11 @@ namespace Microsoft.Extensions.DependencyInjection
 
         private static void ConfigureServices(IServiceCollection services)
         {
+            services.AddScoped<IHttpHelper, HttpHelper>();
+            services.AddScoped<IHtmlParser, HtmlParser>();
             services.AddScoped<IDataParserClient, DataParserClient>();
             services.AddHttpClient<DataParserClient, DataParserClient>();
+
         }
     }
 }
