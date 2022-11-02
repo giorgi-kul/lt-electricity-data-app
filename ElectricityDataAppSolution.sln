@@ -19,6 +19,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ElectricityDataApp.Infrastr
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ElectricityDataApp.UnitTests", "src\Tests\ElectricityDataApp.UnitTests\ElectricityDataApp.UnitTests.csproj", "{61513EDC-DC79-4DDB-A810-19D9E7160FB7}"
 EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{E2273D3D-CB1D-409E-9ED8-2B76BC319B06}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -53,6 +55,10 @@ Global
 		{61513EDC-DC79-4DDB-A810-19D9E7160FB7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{61513EDC-DC79-4DDB-A810-19D9E7160FB7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{61513EDC-DC79-4DDB-A810-19D9E7160FB7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E2273D3D-CB1D-409E-9ED8-2B76BC319B06}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E2273D3D-CB1D-409E-9ED8-2B76BC319B06}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E2273D3D-CB1D-409E-9ED8-2B76BC319B06}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E2273D3D-CB1D-409E-9ED8-2B76BC319B06}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

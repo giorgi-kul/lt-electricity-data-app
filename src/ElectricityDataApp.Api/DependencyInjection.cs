@@ -12,6 +12,7 @@ namespace ElectricityDataApp.Api
     {
         public static IServiceCollection AddApi(this IServiceCollection services, IConfiguration config, ConfigureHostBuilder host)
         {
+
             string connectionString = config.GetConnectionString("DbConnection");
 
             services.AddScoped<IJobService, JobService>();
@@ -55,7 +56,7 @@ namespace ElectricityDataApp.Api
 
         private static void ConfigureRecurringJobs()
         {
-            RecurringJob.AddOrUpdate<IJobService>(jobService => jobService.ProcessElectricityData(), Cron.Monthly());
+            //RecurringJob.AddOrUpdate<IJobService>(jobService => jobService.ProcessElectricityData(), Cron.Monthly());
         }
     }
 }

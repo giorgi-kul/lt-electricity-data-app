@@ -14,6 +14,8 @@ namespace ElectricityDataApp.Infrastructure
 
             services.AddScoped<IDataContext>(provider => provider.GetRequiredService<DataContext>());
 
+            services.AddScoped<DataContextInitializer>();
+
             return services;
         }
     }
